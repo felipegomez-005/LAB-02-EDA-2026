@@ -1,4 +1,4 @@
-public interface Fila<T> {
+public interface Cola<T> {
     void enqueue(T item);
     T dequeue();
     T peek();

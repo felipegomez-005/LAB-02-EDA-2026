@@ -1,17 +1,17 @@
 import edu.princeton.cs.algs4.Queue;
 
-public class PilaConFila<T> implements Pila<T> {
+public class PilaDeCola<T> implements Pila<T> {
 
-    private Queue<T> fila;
+    private Queue<T> cola;
 
-    public PilaConFila() {
-        fila = new Queue<T>();
+    public PilaDeCola() {
+        cola = new Queue<T>();
     }
 
     @Override
     public void push(T item) {
-        int tamañoAnterior = fila.size();
-        fila.enqueue(item);
+        int tamañoAnterior = cola.size();
+        cola.enqueue(item);
         rotar(tamañoAnterior);
     }
 
@@ -19,29 +19,29 @@ public class PilaConFila<T> implements Pila<T> {
         if (n <= 0) {
             return;
         }
-        T elementoViejo = fila.dequeue();
-        fila.enqueue(elementoViejo);
+        T elementoViejo = cola.dequeue();
+        cola.enqueue(elementoViejo);
 
         rotar(n - 1);
     }
 
     @Override
     public T pop() {
-        return fila.dequeue();
+        return cola.dequeue();
     }
 
     @Override
     public T peek() {
-        return fila.peek();
+        return cola.peek();
     }
 
     @Override
     public boolean isEmpty() {
-        return fila.isEmpty();
+        return cola.isEmpty();
     }
 
     @Override
     public int size() {
-        return fila.size();
+        return cola.size();
     }
 }

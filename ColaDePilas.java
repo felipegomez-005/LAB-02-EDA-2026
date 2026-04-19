@@ -1,11 +1,11 @@
 import edu.princeton.cs.algs4.Stack;
 
-public class FilaConPilas<T> implements Fila<T> {
+public class ColaDePilas<T> implements Cola<T> {
 
     private Stack<T> pilaEntrada;
     private Stack<T> pilaSalida;
 
-    public FilaConPilas() {
+    public ColaDePilas() {
         pilaEntrada = new Stack<T>();
         pilaSalida = new Stack<T>();
     }
