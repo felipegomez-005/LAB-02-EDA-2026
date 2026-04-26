@@ -10,19 +10,15 @@ public class PilaDeCola<T> implements Pila<T> {
 
     @Override
     public void push(T item) {
-        int tamañoAnterior = cola.size();
+        int tamanioAnterior = cola.size();
         cola.enqueue(item);
-        rotar(tamañoAnterior);
+        rotar(tamanioAnterior);
     }
 
     private void rotar(int n) {
-        if (n <= 0) {
-            return;
+        for (int i = 0; i < n; i++) {
+            cola.enqueue(cola.dequeue());
         }
-        T elementoViejo = cola.dequeue();
-        cola.enqueue(elementoViejo);
-
-        rotar(n - 1);
     }
 
     @Override

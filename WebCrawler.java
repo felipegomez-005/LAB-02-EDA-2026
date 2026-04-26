@@ -97,6 +97,15 @@ public class WebCrawler {
         return todasSonValidas;
     }
 
+    public static void simularCrawlerOffline(int N, Cola<String> cola) {
+        cola.enqueue("url_raiz");
+        for (int i = 0; i < N; i++) {
+            if (!cola.isEmpty()) cola.dequeue();
+            cola.enqueue("link1_" + i);
+            cola.enqueue("link2_" + i);
+        }
+    }
+
     public static void main(String[] args) {
         Pila<String> miPila = new PilaPrinceton<>();
         Cola<String> miCola = new ColaPrinceton<>();
